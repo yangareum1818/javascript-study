@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="assets/css/core.css">
+  <title>Document</title>
+</head>
+
+<style>
+  .message-ball {
+    font-size: 20px;
+    line-height: 200px;
+    text-align: center;
+  }
+  .circle {
+    transition-property: width, height, margin-left, margin-top;
+    transition-duration: 2s;
+    position: fixed;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: red;
+    border-radius: 50%;
+  }
+
+</style>
+<body>
+  <div id="wrap">
+    <header>
+      <h1>로고자리</h1>
+      <nav>
+        <ul class="nav_list">
+          <li><a href="#nav01">nav01</a></li>
+          <li><a href="#nav02">nav02</a></li>
+          <li><a href="#nav03">nav03</a></li>
+          <li><a href="#nav04">nav04</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="section sec-01">
+        <h2>여기는 Section 1 클로저를 활용한 toggle 입니다.</h2>
+        <div class="toggle">
+          <p class="toggle_title">최첨단 토글 시스템</p>
+          <span class="chang_text">컬러 : {blue} </span>
+          <button class="toggle_btn">토글 버튼이라구 ! 톡을 !</button>
+        </div>
+      </section>
+
+      <section class="section sec-03">
+        <div class="green">그린
+          <div class="yellow">옐로우
+            <div class="tomato">토마토</div>
+          </div>
+        </div>
+
+        <div class="green" style="width: 300px; height: 300px; background-color: green;">
+            <div class="yellow" style="width: 200px; height: 200px; background-color: yellow;">
+              <div class="tomato" style="width: 100px; height: 100px; background-color: tomato;"></div>
+            </div>
+        </div>
+
+        <h1>체크 리스트</h1>
+        <ul class="itemList">
+          <li>
+            <input type="checkbox" id="list1">
+            <label for="list1">이벤트 리스트 1</label>
+          </li>
+          <li>
+            <input type="checkbox" id="list2">
+            <label for="list2">이벤트 리스트 2</label>
+          </li>
+          <li>
+            <input type="checkbox" id="list3">
+            <label for="list3">이벤트 리스트 3</label>
+          </li>
+        </ul>
+      </section>
+      
+      <section class="section sec-02">
+        <h2>여기는 Section 3 todolist 입니다.</h2>
+        <div>
+          <p class="total_text">총 리스트 갯수 :
+            <span class="total">0</span>개
+          </p>
+          <p class="chk_text">선택한 리스트 갯수 :
+            <span class="chk">0</span>개
+          </p>
+          <button class="all_checked" disabled>모두 Checked</button>
+          <button class="all_delete" disabled>checked된 list 모두 삭제</button>
+        </div>
+
+        <form id="form_todo" class="form_group">
+          <input type="text" class="todo_input" autofocus required />
+          <button class="todo_btn">➕ 추가 할거야 ➕</button>
+        </form>
+
+        <div class="todo_wrapper">
+          <ul class="todo"></ul>
+          <div class="empty">
+            체크 list를 작성해주세요.
+          </div>
+        </div>
+      </section>
+    
+    </main>
+    <footer></footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+  <!-- <script src="assets/js/core.js"></script> -->
+  <!-- <script src="assets/js/todolist.js"></script> -->
+  <script>
+    // const divs = document.querySelectorAll("div");
+    // divs.forEach(function(div) {
+    //   div.addEventListener("click", logEvent, {
+    //     capture: true
+    //   });
+    // });
+
+    // function logEvent(event) {
+    //   console.log(event.currentTarget.className);
+    // }
+
+  // 상위 ul tag에 이벤트 부여 , 이벤트 버블링 효과에 따라 아래 li에 요소가 추가되도 이벤트 실행 가능
+  const itemList = document.querySelector(".itemList");
+  itemList.addEventListener("click", function(event) {
+    event.target.style.textDecoration = !event.target.style.textDecoration ? 'line-through' : '';
+  });
+
+  // 새 리스트 아이템을 추가하는 코드
+  const li = document.createElement("li");
+  var input = document.createElement("input");
+  var label = document.createElement("label");
+  var labelText = document.createTextNode("이벤트 위임 하기");
+
+  input.setAttribute("type", "checkbox");
+  input.setAttribute("id", "list4");
+  label.setAttribute("for", "list4");
+  label.appendChild(labelText);
+  li.appendChild(input);
+  li.appendChild(label);
+  itemList.appendChild(li);
+
+  // const green = document.querySelector('.green');
+  // green.addEventListener('click',function(e){
+  //   const { target, currentTarget } = e;
+	
+	//   // if ( target !== currentTarget ) return
+    
+  //   console.log("currentTarget : ", currentTarget.className);
+  //   console.log("Target : ", target.className);
+  // })
+
+    /*
+    // array 배열
+    const arr = ['Jazz', 'Blues'];
+    const newArr = arr;
+
+    arr.push('Rock-n');
+    arr.push('AARock-n');
+    arr.push('AAARock-n');
+    newArr.push('Roll');
+    console.log(arr);
+
+    arr[Math.floor((arr.length - 1) / 2)] = "Classics";
+    console.log(arr);
+
+    arr.shift();
+    console.log(arr);
+
+    arr.unshift('Rap', 'Reggae')
+    console.log(arr);
+    */
+
+    /*
+    let promise1 = new Promise((resolve, reject) => {
+    //promise 생성
+    setTimeout(() => {
+      resolve(3);
+      console.log(1);//3000ms후 실행
+    }, 3000);
+  });
+
+  promise1.then((value) => {//then의 익명함수에서 받은 매개변수는 resolve에 들어있는 값을 받는다.
+    //then안에 promise다음에 실행될 함수를 실행시킨다
+    console.log(2);
+    console.log(value);//value는 resolve에 들어서 반환된 값
+  });
+  */
+  </script>
+</body>
+
+</html>
