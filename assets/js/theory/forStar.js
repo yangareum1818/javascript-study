@@ -267,3 +267,10 @@ for (let i = 1; i <= 1; i++) {
   }
   console.log(str); // list123456
 }
+
+/* 1부터 9까지의 합 */
+let sum = 0;
+for (let i = 0; i < 10; i++) {
+  sum += i; // sum = sum + i 요약해서 사용가능하다.
+}
+console.log(sum);

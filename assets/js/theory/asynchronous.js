@@ -1,4 +1,3 @@
-/*
 // class callbackhell
 class UserStorage {
   loginUser(id, password, onSuccess, onError) {
@@ -49,7 +48,7 @@ userStorage.loginUser(
   }
 );
 
-// ⬆️ callback hell ⬆️ Promise 수정 해보기 
+// ⬆️ callback hell ⬆️ Promise 수정 해보기
 class UserStorage2 {
   loginUser(id, password) {
     return new Promise((resolve, reject) => {
@@ -90,11 +89,9 @@ userStorage2
     alert(`Hello ${user.name}, you Have a ${user.role} role !!`);
   })
   .catch(console.log);
-*/
 
 // ⬆️ callback hell ⬆️ async await promise 수정 해보기
 
-/*
 // Promise
 // 프로듀서
 const promise = new Promise((resolve, reject) => {
@@ -165,8 +162,6 @@ getHen()
   .catch(console.log);
 // err는 어느 상황에 맞는지 봐가면서 catch를 사용하면 좋을 것이다.
 
-
-*/
 // async / await
 function delay(ms) {
   return new Promise((resolve) => {
@@ -264,7 +259,6 @@ p.then((result) => {
 
 // Promise.resolve()
 
-/*
 // 초에 맞게 순차대로 하나씩 모든 나타나기.
 getTomato()
   .then((fruit) => {
@@ -302,7 +296,6 @@ async function singlyFruits() {
 singlyFruits();
 // 잠시 대기 -- end
 
-
 // promise를 이용한 클릭 후 원이 그려지기
 function goClick() {
   showCircle(150, 150, 100).then((div) => {
@@ -310,7 +303,7 @@ function goClick() {
     div.append("Hello, world!");
   });
 }
- 
+
 function showCircle(cx, cy, radius) {
   let div = document.createElement("div");
   div.style.width = 0;
@@ -332,7 +325,6 @@ function showCircle(cx, cy, radius) {
     }, 0);
   });
 }
-
 
 // aysync await로만 모든 과일 나타나기
 async function fickFruits() {
@@ -405,4 +397,18 @@ async function timetext() {
 
 timetext();
 
-*/
+// 비동기 Promise를 이용해 console.log에 먼저찍히는 순서.
+let promise1 = new Promise((resolve, reject) => {
+  //promise 생성
+  setTimeout(() => {
+    resolve(3);
+    console.log(1); //3000ms후 실행
+  }, 3000);
+});
+
+promise1.then((value) => {
+  //then의 익명함수에서 받은 매개변수는 resolve에 들어있는 값을 받는다.
+  //then안에 promise다음에 실행될 함수를 실행시킨다
+  console.log(2);
+  console.log(value); //value는 resolve에 들어서 반환된 값
+});

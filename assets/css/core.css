@@ -6,18 +6,31 @@
   .nav_list li { padding: 10px; margin-left: 10px; background: #fff; }
   .nav_list li:first-child { margin-left: 0; }
   .nav_list li a { font-size: 18px; color: #000; text-decoration: none; }
-  
+
+  /* article */
+  .article { display: flex; align-items: center; justify-content: center; flex-direction: column; height: 40vh; }
+  .article h1 { font-size: 32px; font-weight: bold; }
+  .article .explanation { display: block; padding: 10px 15px; color: #444; font-weight: bold; border-radius: 30px; box-shadow: 1px 1px 10px 4px #f2edff; }
   /* section */
-  .section { display: flex; justify-content: center; align-items: center; flex-direction: column; width: 100%; height: 100vh; }
-  .sec-01 { background: #f698e3; }
-  .sec-02 { background: #c7dc09; }
-  .sec-03 { background: #f2edff; }
-  .sec-04 { background: #ffe5ba }
-  
+  .section { display: flex; justify-content: center; align-items: center; flex-direction: column; padding: 100px 0; width: 100%; }
+
   .section h2 {
-    font-size: 38px;
-    font-weight: 700;
+    margin-bottom: 20px;
+    color: #444;
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
   }
+  .section h4 {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .sec-01 { background: #eee; }
+  .sec-02 { background: #f2edff; }
+  .sec-03 { background: #eee; }
+
+  /* sec-01 클로저 */
   .toggle {
     padding: 10px;
     border: 1px solid #000;
@@ -38,47 +51,9 @@
     display: block;
   }
 
+  /* sec-02 이벤트버블링, 캡쳐링, 위임 */
   .sec-02 {}
-  .sec-02 .total_text { text-align: center; }
-  .sec-02 .total_text .total { font-size: 26px; }
-  .sec-02 .chk_text { text-align: center; }
-  .sec-02 .chk_text .chk { font-size: 26px; }
-  .sec-02 .todo_wrapper {
-    margin-top: 20px;
-    padding: 20px;
-    min-width: 380px;
-    min-height: 220px;
-    text-align: center;
-    line-height: 218px;
-    border: 1px solid #000;
-    background: rgb(232, 232, 232);
-  }
-  .sec-02 .todo_wrapper .todo li {
-    display: flex;
-    align-items: center;
-    height: 32px;
-    line-height: 32px;
-  }
-  .sec-02 .todo_wrapper .todo li .todo_text {
-    color: #000;
-    font-size: 30px;
-    text-decoration-line: none;
-    transition: all .25s ease;
-  }
-  .sec-02 .todo_wrapper .todo li .todo_text.checked {
-    text-decoration-line: line-through;
-    color: #f00;
-  }
-  .sec-02 .todo_wrapper .todo li .delete_btn {
-    display: none;
-  }
-  .sec-02 .todo_wrapper .todo li.isState .delete_btn.checked {
-    display: block;
-  }
-  .sec-02 .todo_wrapper .empty {
-    display: block;
-  }
-
-  .green { width: 500px; height: 500px; background: green; }
-  .green .yellow { width: 300px; height: 300px; background: yellow; }
-  .green .yellow .tomato{ width: 100px; height: 100px; background: tomato; }
+  .sec-02 .addevent { display: flex; justify-content: space-around; width: 100%; }
+  .sec-02 .green { width: 100px; height: 100px; background: green; }
+  .sec-02 .green .yellow { width: 70px; height: 70px; background: yellow; }
+  .sec-02 .green .yellow .tomato{ width: 50px; height: 50px; background: tomato; }
