@@ -80,15 +80,61 @@
 
       <section class="section sec-03">
         <h2>( 순서도를 그리며 ) 쿵쿵따</h2>
+        <button class="start">끝말잇기 START 시작!</button>
         <div class="follow">
           <div class="order">
             <span class="participant">1</span>번째 참가자
           </div>
           <div class="suggested">제시어
-            <span class="word"></span>
+            <span id="word" class="word">?</span>
           </div>
-          <input type="text" name="" id="">
-          <button>입력</button>
+          <input class="fol_input" type="text" name="" id="">
+          <button class="fol_btn">입력</button>
+        </div>
+      </section>
+
+      <section class="section sec-04">
+        <h2>계산기 만들기</h2>
+        <div class="calculator">
+          <table class="table_style">
+            <thead>
+              <tr>
+                <th>0</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>AC</td>
+                <td>+/-</td>
+                <td>%</td>
+                <td>/</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>*</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>+</td>
+              </tr>
+              <tr class="last">
+                <td>0</td>
+                <td>.</td>
+                <td>=</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
     
@@ -97,8 +143,8 @@
   </div>
 
   <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/addEvent_bubbleing.js"></script>
+  <!-- <script src="assets/js/core.js"></script>
+  <script src="assets/js/addEvent_bubbleing.js"></script> -->
   <script src="assets/js/follow_up.js"></script>
 </body>
 

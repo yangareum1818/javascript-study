@@ -48,7 +48,9 @@
     background: #f00;
   }
   .toggle .toggle_btn {
+    padding: 4px 8px;
     display: block;
+	  box-shadow: 1px 1px 4px 1px #ccc;
   }
 
   /* sec-02 이벤트버블링, 캡쳐링, 위임 */
@@ -57,3 +59,30 @@
   .sec-02 .green { width: 100px; height: 100px; background: green; }
   .sec-02 .green .yellow { width: 70px; height: 70px; background: yellow; }
   .sec-02 .green .yellow .tomato{ width: 50px; height: 50px; background: tomato; }
+
+  /* sec-03 쿵쿵따 끝말잇기 */
+.sec-03 {}
+.start { padding: 10px 20px; color: #aaa; font-weight: bold; border: 1px solid #aaa; border-radius: 20px; transition: all .25s ease-in;}
+.start:hover { background: #444; color: #fff;}
+.follow { display: none; margin-top: 20px; padding: 20px; box-shadow: 1px 1px 4px 1px #ccc; transition: all .20s ease-in; }
+.follow .order { text-align: center; }
+.follow .order .participant { font-size: 20px; font-weight: bold; }
+.follow .suggested {}
+.follow .suggested .word { font-size: 20px; font-weight: bold; }
+.follow .fol_input {}
+.follow .fol_btn { padding: 4px 8px; box-shadow: 1px 1px 4px 1px #ccc; }
+
+
+  /* sec-04 계산기 만들기 */
+  .calculator { width: 100%; display: flex; justify-content: center; align-items: center;}
+  .calculator .table_style { min-width: 500px; border: 1px solid #000; }
+  .calculator .table_style thead {  }
+  .calculator .table_style thead tr {  }
+  .calculator .table_style thead tr th { padding: 0 15px; width: 100%; text-align: right; }
+
+  .calculator .table_style tbody { }
+  .calculator .table_style tbody td { flex: 1; border-right: 1px solid #000; cursor: pointer; }
+  .calculator .table_style tbody td:last-child { border-right: none;}
+  .calculator .table_style tr { display: flex; height: 40px; line-height: 40px; border-bottom: 1px solid #000; font-size: 24px; text-align: center; }
+  .calculator .table_style .last { border-bottom: none; }
+  .calculator .table_style .last td:first-child{ flex: 2;}

@@ -62,6 +62,10 @@ button, select {
 	cursor: pointer;
 }
 
+input {
+	border: 1px solid #000;
+}
+
 button,
 input[type='button'],
 input[type='submit'],
