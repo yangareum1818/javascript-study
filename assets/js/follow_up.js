@@ -16,10 +16,7 @@ const startView = () => {
     // $startButton.textContent = "끝말잇기 끝내기 The End";
 
     const onClickButton = () => {
-      if (
-        !word ||
-        (word[word.length - 1] === newWord[0] && newWord.length === 3)
-      ) {
+      if (!word || word[word.length - 1] === newWord[0]) {
         // 제시어가 비어있는가 ?
         word = newWord;
         $word.textContent = word;
