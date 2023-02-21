@@ -1,4 +1,33 @@
-// 변수들을 지역변수로 넣어서 만들어 보아라 !
+// 1. 토글버튼을 만들어보아라 !
+// const button = document.querySelector("button");
+// const text = document.querySelector("h2");
+// const actived = "active";
+
+// function textChangHandler() {
+//   if (text.className === actived) {
+//     text.className = "";
+//   } else {
+//     text.className = actived;
+//   }
+// }
+
+// button.addEventListener("click", () => textChangHandler());
+
+// 2. 변수들을 지역변수로 넣어서 만들어 보아라 !
+// function toggleText() {
+//   const button = document.querySelector("button");
+//   const text = document.querySelector(".chang_text");
+//   const actived = "active";
+
+//   const textChangHandler = function () {
+//     text.classList.toggle(actived);
+//   };
+
+//   button.addEventListener("click", textChangHandler);
+// }
+// toggleText();
+
+// 3. 클로저를 이용해 만들어 보아라 !
 function ToggleChange() {
   const button = document.querySelector(".toggle_btn");
   const text = document.querySelector(".chang_text");

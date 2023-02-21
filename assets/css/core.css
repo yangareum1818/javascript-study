@@ -81,8 +81,8 @@
   .calculator .table_style thead tr th { padding: 0 15px; width: 100%; text-align: right; }
 
   .calculator .table_style tbody { }
+  .calculator .table_style tbody tr { border-top: 1px solid #000; }
+  .calculator .table_style tr { display: flex; height: 40px; line-height: 40px; font-size: 24px; text-align: center; }
   .calculator .table_style tbody td { flex: 1; border-right: 1px solid #000; cursor: pointer; }
   .calculator .table_style tbody td:last-child { border-right: none;}
-  .calculator .table_style tr { display: flex; height: 40px; line-height: 40px; border-bottom: 1px solid #000; font-size: 24px; text-align: center; }
-  .calculator .table_style .last { border-bottom: none; }
-  .calculator .table_style .last td:first-child{ flex: 2;}
+  .calculator .table_style .divide td:first-child{ flex: 2;}
